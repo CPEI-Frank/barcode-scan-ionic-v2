@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Ionic Barcode Scanner
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	<div *ngIf="results">
+		<p>{{ results.text }}</p>
+		<p>{{ results.format }}</p>
+		<p>{{ results.cancelled }}</p>
+	</div>
+
+	<a href="https://www.ean-search.org/" 
+	style="text-decoration:none; font:bold 10pt Arial,sans-serif; color:black;" target=_top>EAN-Search</a>
+		<form action="https://www.ean-search.org/perl/ean-search.pl" method=get target=_blank>
+			<input name=q type=text size=15>
+			<input type=submit value="Search">
+		</form>
+	
+  <button ion-button (click)="getScan();">Scan Barcode</button>
+
+</ion-content>
